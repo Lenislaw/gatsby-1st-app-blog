@@ -19,15 +19,14 @@ const IndexPage = () => (
               <div>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                   <Post
-                    // key={node.id}
+                    key={node.id}
                     title={node.frontmatter.title}
-                    // slug={node.fields.slug}
+                    slug={node.fields.slug}
                     author={node.frontmatter.author}
                     body={node.excerpt}
                     date={node.frontmatter.date}
                     fluid={node.frontmatter.image.childImageSharp.fluid}
                     tags={node.frontmatter.tags}
-                    path={node.frontmatter.path}
                   />
                 ))}
                 {/* <PaginationLinks currentPage={1} numberOfPages={numberOfPages} /> */}
@@ -50,11 +49,11 @@ const indexQuery = graphql`
       edges {
         node {
           id
+          html
           frontmatter {
             title
             date(formatString: "MMM Do YYYY")
             author
-            path
             tags
             image {
               childImageSharp {
@@ -63,6 +62,9 @@ const indexQuery = graphql`
                 }
               }
             }
+          }
+          fields {
+            slug
           }
 
           excerpt

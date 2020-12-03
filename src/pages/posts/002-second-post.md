@@ -2,7 +2,6 @@
 title: "Second Post - 2nd"
 date: 2018-21-02 07:00:00
 author: "Jhane Doe"
-path: "/second-post"
 image: "../../images/image2.jpg"
 tags:
   - code
