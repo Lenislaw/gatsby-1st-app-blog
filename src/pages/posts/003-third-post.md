@@ -1,5 +1,5 @@
 ---
-title: "Third Post - CSS"
+title: "Trololo"
 date: 2018-21-03 07:00:00
 author: "Jhane Doe"
 image: "../../images/image3.jpg"
