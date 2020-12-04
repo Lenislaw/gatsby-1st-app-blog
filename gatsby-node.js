@@ -8,6 +8,7 @@
 
 const { slugify } = require("./src/util/utilityFunctions")
 const path = require("path")
+const authors = require("./src/util/authors")
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
@@ -21,17 +22,22 @@ exports.onCreateNode = ({ node, actions }) => {
   }
 }
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
-  const singlePostTemplate = path.resolve("src/templates/single-post.js")
 
-  return graphql(`
+  // Page templates
+  const templates = {
+    post: path.resolve("src/templates/single-post.js"),
+  }
+
+  const res = await graphql(`
     {
       allMarkdownRemark {
         edges {
           node {
             frontmatter {
               author
+              tags
             }
             fields {
               slug
@@ -40,19 +46,25 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(res => {
-    if (res.errors) return Promise.reject(res.errors)
-    const posts = res.data.allMarkdownRemark.edges
+  `)
 
-    posts.forEach(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: singlePostTemplate,
-        context: {
-          //Passing slug for template to use to get post
-          slug: node.fields.slug,
-        },
-      })
+  if (res.errors) return Promise.reject(res.errors)
+
+  // Extracting all posts from res
+  const posts = res.data.allMarkdownRemark.edges
+
+  // Create single post pages
+  posts.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: templates.post,
+      context: {
+        // Passing slug for template to use to fetch the post
+        slug: node.fields.slug,
+        // Find author imageUrl from author array and pass it to template
+        imageUrl: authors.find(x => x.name === node.frontmatter.author)
+          .imageUrl,
+      },
     })
   })
 }

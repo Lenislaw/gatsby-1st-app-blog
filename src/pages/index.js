@@ -9,7 +9,6 @@ import Sidebar from "../components/Sidebar"
 const IndexPage = () => (
   <Layout pageTitle="Code Blog">
     <SEO title="Home" />
-    
 
     <StaticQuery
       query={indexQuery}

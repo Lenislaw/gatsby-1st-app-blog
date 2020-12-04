@@ -1,7 +1,7 @@
 ---
 title: "Second Post - 2nd"
 date: 2018-21-02 07:00:00
-author: "Jhane Doe"
+author: "Jane Doe"
 image: "../../images/image2.jpg"
 tags:
   - code

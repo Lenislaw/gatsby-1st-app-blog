@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 const TeamPage = () => (
   <Layout pageTitle="Our Team">
     <SEO title="Team" keyword={["gatsby", "application", "react"]} />
-    
   </Layout>
 )
 

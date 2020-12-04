@@ -1,7 +1,7 @@
 ---
 title: "Trololo"
 date: 2018-21-03 07:00:00
-author: "Jhane Doe"
+author: "Jane Doe"
 image: "../../images/image3.jpg"
 tags:
   - design
