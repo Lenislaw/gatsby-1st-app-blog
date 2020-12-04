@@ -18,20 +18,20 @@ Full tutorial series: https://www.youtube.com/watch?v=lvq2nc3WkZU&list=PLMhAeHCz
 1.  **Clone/Download the code from this repo**
 
     ```sh
-    git clone git@github.com:hidjou/gatsby-blog-tutorial.git
+    git clone git@github.com:hidjou/gatsby-1st-app-blog.git
     ```
 
 1.  **Install dependencies**
 
     ```sh
-    cd gatsby-blog-tutorial
+    cd gatsby-1st-app-blog
     npm install
     ```
 
     or
 
     ```sh
-    cd gatsby-blog-tutorial
+    cd gatsby-1st-app-blog
     yarn install
     ```
 
