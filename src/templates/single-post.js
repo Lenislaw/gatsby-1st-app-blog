@@ -7,11 +7,13 @@ import { Row, Col, CardBody, Card, Badge, CardSubtitle } from "reactstrap"
 import Img from "gatsby-image"
 import { slugify } from "../util/utilityFunctions"
 import authors from "../util/authors"
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"
 
-const SinglePost = ({ data }) => {
+const SinglePost = ({ data, pageContext }) => {
   const post = data.markdownRemark.frontmatter
   const author = authors.find(x => x.name === post.author)
 
+  const baseUrl = "https://gatsbytutorial.co.uk"
   return (
     <Layout
       pageTitle={post.title}
@@ -42,6 +44,51 @@ const SinglePost = ({ data }) => {
           </ul>
         </CardBody>
       </Card>
+      <h3 className="text-center">Share this post</h3>
+      <div className="text-center social-share-links">
+        <ul>
+          <li>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${baseUrl}${pageContext.slug}`}
+              className="facebook"
+              target="_black"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF size="2rem" />
+            </a>
+          </li>
+          <li>
+            <a
+              href={`https://www.twitter.com/share?url=${baseUrl}${pageContext.slug}&text=${post.title}$via"twitterhanlder"`}
+              className="twitter"
+              target="_black"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter size="2rem" />
+            </a>
+          </li>
+          {/* <li>
+            <a
+              href={`https://www.plus.google.com/share?url=${baseUrl}${pageContext.slug}`}
+              className="google"
+              target="_black"
+              rel="noopener noreferrer"
+            >
+              <FaGoogle size="2rem" />
+            </a>
+          </li> */}
+          <li>
+            <a
+              href={`https://www.linkedin.com/shareArticle?url=${baseUrl}${pageContext.slug}`}
+              className="linkedin"
+              target="_black"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin size="2rem" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </Layout>
   )
 }
