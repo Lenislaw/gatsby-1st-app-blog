@@ -5,6 +5,7 @@ author: "John Doe"
 image: "../../images/image1.jpg"
 tags:
   - code
+  - design
 ---
 
 Welcome to Code Blog, I hope you enjoy our content.
