@@ -1,24 +1,9 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Blog Tutorial
-</h1>
-
-This is the complete code for the Gatsby tutorial I published on my Youtube channel
-[Classsed](https://www.youtube.com/channel/UC2-slOJImuSc20Drbf88qvg)
-
-Full tutorial series: https://www.youtube.com/watch?v=lvq2nc3WkZU&list=PLMhAeHCz8S3_x-jXerCYnl7jftCSxQkPV
-
-## Guide
+## Simple Blog App
 
 1.  **Clone/Download the code from this repo**
 
     ```sh
-    git clone git@github.com:hidjou/gatsby-1st-app-blog.git
+    git clone git@github.com:Lenislaw/gatsby-1st-app-blog.git
     ```
 
 1.  **Install dependencies**
